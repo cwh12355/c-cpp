@@ -109,6 +109,21 @@ end:
     
 
 }
+int cmd_out(char * src){
+    while(*src){
+        printf("the index char * src is %c\n",*src);
+        src++;
+    }
+}
+int inter_malloc(char **str,size_t n){
+    if(*str == NULL){
+        *str = (char *)malloc(sizeof(char) * n);
+        *str = "afadsf";
+        printf("inter address is %p\n",*str);
+        cmd_out(*str);
+    } else 
+        printf("already malloc memory \n");
+}
 int main (){
     char  c[] = "aakk1223 ::";
     const char c_p1[] = "aka::apa:APA: :909";
@@ -139,6 +154,11 @@ int main (){
     uint16_t * pp3 = NULL;
     check_double_ptr(&pp3,4);
     printf("pss double ptr is %d\n",*pp3);
+    char * it_m = NULL;
+    inter_malloc(&it_m,99);
+    printf("out address is %p\n",it_m);
+    printf("out address is %s\n",it_m);
 
+    
 
 }
